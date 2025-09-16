@@ -1,78 +1,285 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=20540712&assignment_repo_type=AssignmentRepo)
-# Deployment and DevOps for MERN Applications
+# Socket.io Real-Time Chat Application
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+A production-ready real-time chat application built with Socket.io, React, and Express.js. Features include real-time messaging, private messages, typing indicators, and user presence.
 
-## Assignment Overview
+## 🚀 Live Demo
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+- **Frontend**: [Your Vercel URL here]
+- **Backend API**: [Your Render URL here]
 
-## Getting Started
+## 📋 Features
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+- Real-time messaging with Socket.io
+- Private messaging between users
+- Typing indicators
+- User presence and online status
+- Responsive design
+- Production-ready with CI/CD pipeline
+- Health monitoring and error handling
 
-## Files Included
+## 🛠️ Tech Stack
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+### Frontend
+- React 18
+- Vite (build tool)
+- Socket.io Client
+- Lucide React (icons)
+- CSS3 with modern features
 
-## Requirements
+### Backend
+- Node.js & Express.js
+- Socket.io Server
+- Helmet (security)
+- Rate limiting
+- CORS configuration
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+### DevOps & Deployment
+- GitHub Actions (CI/CD)
+- Render (backend hosting)
+- Vercel (frontend hosting)
+- ESLint & Prettier (code quality)
+- Jest & Vitest (testing)
 
-## Deployment Platforms
+## 🏗️ Project Structure
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+```
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── socket/         # Socket.io client logic
+│   │   ├── config/         # Environment configuration
+│   │   └── test/           # Test files
+│   ├── .env.example        # Environment variables template
+│   └── vercel.json         # Vercel deployment config
+├── server/                 # Express.js backend
+│   ├── tests/              # Backend tests
+│   ├── .env.example        # Environment variables template
+│   └── server.js           # Main server file
+├── .github/workflows/      # CI/CD pipelines
+├── scripts/                # Deployment scripts
+└── render.yaml             # Render deployment config
+```
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+## 🚀 Quick Start
 
-## CI/CD Pipeline
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Git
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+### Local Development
 
-## Submission
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd socket-chat-app
+   ```
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+2. **Set up the backend**
+   ```bash
+   cd server
+   cp .env.example .env
+   npm install
+   npm run dev
+   ```
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+3. **Set up the frontend** (in a new terminal)
+   ```bash
+   cd client
+   cp .env.example .env
+   npm install
+   npm run dev
+   ```
 
-## Resources
+4. **Open your browser**
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:5001
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
+## 🌐 Deployment
+
+### Backend Deployment (Render)
+
+1. **Create a Render account** at [render.com](https://render.com)
+
+2. **Create a new Web Service**
+   - Connect your GitHub repository
+   - Set build command: `cd server && npm install`
+   - Set start command: `cd server && npm start`
+   - Set environment variables:
+     ```
+     NODE_ENV=production
+     CLIENT_URL=https://your-frontend-url.vercel.app
+     ```
+
+3. **Deploy and get your backend URL**
+
+### Frontend Deployment (Vercel)
+
+1. **Create a Vercel account** at [vercel.com](https://vercel.com)
+
+2. **Import your project**
+   - Connect your GitHub repository
+   - Set root directory to `client`
+   - Set build command: `npm run build`
+   - Set output directory: `dist`
+
+3. **Set environment variables**
+   ```
+   VITE_SERVER_URL=https://your-backend-url.onrender.com
+   VITE_NODE_ENV=production
+   ```
+
+4. **Deploy and get your frontend URL**
+
+### Alternative Deployment Options
+
+#### Backend Alternatives
+- **Railway**: Connect GitHub repo, set start command
+- **Heroku**: Use Heroku CLI or GitHub integration
+
+#### Frontend Alternatives
+- **Netlify**: Drag & drop `client/dist` folder or connect GitHub
+- **GitHub Pages**: Use GitHub Actions workflow
+
+## 🔧 Environment Variables
+
+### Backend (.env)
+```env
+# Server Configuration
+SERVER_PORT=5001
+NODE_ENV=development
+
+# Client Configuration  
+CLIENT_URL=http://localhost:5173
+
+# Security
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
+```
+
+### Frontend (.env)
+```env
+# Server Configuration
+VITE_SERVER_URL=http://localhost:5001
+
+# App Configuration
+VITE_NODE_ENV=development
+VITE_APP_NAME=Socket.io Chat
+```
+
+## 🧪 Testing
+
+### Run Backend Tests
+```bash
+cd server
+npm test
+```
+
+### Run Frontend Tests
+```bash
+cd client
+npm run test
+```
+
+### Run All Tests
+```bash
+# From project root
+npm run test:all
+```
+
+## 📊 CI/CD Pipeline
+
+The project includes a comprehensive GitHub Actions workflow that:
+
+1. **Continuous Integration**
+   - Runs ESLint for code quality
+   - Executes test suites
+   - Builds applications
+
+2. **Continuous Deployment**
+   - Deploys backend to Render
+   - Deploys frontend to Vercel
+   - Runs health checks
+
+### Setting Up CI/CD
+
+1. **Add GitHub Secrets**
+   ```
+   RENDER_SERVICE_ID=your-render-service-id
+   RENDER_API_KEY=your-render-api-key
+   VERCEL_TOKEN=your-vercel-token
+   VERCEL_ORG_ID=your-vercel-org-id
+   VERCEL_PROJECT_ID=your-vercel-project-id
+   VITE_SERVER_URL=https://your-backend-url.onrender.com
+   ```
+
+2. **Push to main branch** to trigger deployment
+
+## 🔍 Monitoring & Health Checks
+
+### Health Endpoints
+- **Backend Health**: `GET /api/health`
+- **API Status**: `GET /`
+
+### Monitoring Features
+- Server uptime tracking
+- Connected users count
+- Error logging and handling
+- Rate limiting protection
+
+## 🛡️ Security Features
+
+- Helmet.js for security headers
+- CORS configuration
+- Rate limiting
+- Input validation
+- Environment-based configuration
+
+## 📱 Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if needed
+5. Run the test suite
+6. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🆘 Troubleshooting
+
+### Common Issues
+
+1. **CORS Errors**
+   - Check CLIENT_URL environment variable
+   - Verify frontend URL in backend CORS config
+
+2. **Connection Issues**
+   - Ensure both frontend and backend are running
+   - Check VITE_SERVER_URL in frontend
+
+3. **Build Failures**
+   - Clear node_modules and reinstall
+   - Check Node.js version (18+ required)
+
+### Getting Help
+
+- Check the [Issues](../../issues) page
+- Review deployment logs in Render/Vercel dashboards
+- Verify environment variables are set correctly
+
+## 📚 Additional Resources
+
+- [Socket.io Documentation](https://socket.io/docs/)
+- [React Documentation](https://react.dev/)
 - [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+- [Vercel Documentation](https://vercel.com/docs) 
