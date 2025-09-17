@@ -4,8 +4,8 @@ A production-ready real-time chat application built with Messenger, React, and E
 
 ## 🚀 Live Demo
 
-- **Frontend**: [Your Vercel URL here]
-- **Backend API**: [Your Render URL here]
+- **Frontend**: [\[Vercel Frontend\]](http://plpmessenger.vercel.app/)
+- **Backend API**: [\[Render Backend\]](https://messenger-backend-3fl7.onrender.com)
 
 ## 📋 Features
 
