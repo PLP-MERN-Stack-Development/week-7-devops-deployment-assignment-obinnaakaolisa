@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Deployment script for Socket.io Chat Application
+# Deployment script for Messenger Chat Application
 set -e
 
 echo "🚀 Starting deployment process..."
@@ -53,7 +53,7 @@ deploy_frontend() {
 
 # Main deployment process
 main() {
-    echo "Starting deployment for Socket.io Chat Application"
+    echo "Starting deployment for Messenger Chat Application"
     
     # Deploy backend
     deploy_backend

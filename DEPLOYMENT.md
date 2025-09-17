@@ -24,7 +24,7 @@ This guide covers deploying the Socket.io Chat Application to production environ
    - Connect your GitHub repository
    - Configure service:
      ```
-     Name: socket-chat-backend
+     Name: messenger-backend
      Environment: Node
      Build Command: cd server && npm install
      Start Command: cd server && npm start

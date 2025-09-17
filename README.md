@@ -1,6 +1,6 @@
-# Socket.io Real-Time Chat Application
+# Messenger Real-Time Chat Application
 
-A production-ready real-time chat application built with Socket.io, React, and Express.js. Features include real-time messaging, private messages, typing indicators, and user presence.
+A production-ready real-time chat application built with Messenger, React, and Express.js. Features include real-time messaging, private messages, typing indicators, and user presence.
 
 ## 🚀 Live Demo
 
@@ -9,7 +9,7 @@ A production-ready real-time chat application built with Socket.io, React, and E
 
 ## 📋 Features
 
-- Real-time messaging with Socket.io
+- Real-time messaging with Messenger
 - Private messaging between users
 - Typing indicators
 - User presence and online status
@@ -22,13 +22,13 @@ A production-ready real-time chat application built with Socket.io, React, and E
 ### Frontend
 - React 18
 - Vite (build tool)
-- Socket.io Client
+- Messenger Client
 - Lucide React (icons)
 - CSS3 with modern features
 
 ### Backend
 - Node.js & Express.js
-- Socket.io Server
+- Messenger Server
 - Helmet (security)
 - Rate limiting
 - CORS configuration
@@ -46,7 +46,7 @@ A production-ready real-time chat application built with Socket.io, React, and E
 ├── client/                 # React frontend
 │   ├── src/
 │   │   ├── components/     # React components
-│   │   ├── socket/         # Socket.io client logic
+│   │   ├── socket/         # Messenger client logic
 │   │   ├── config/         # Environment configuration
 │   │   └── test/           # Test files
 │   ├── .env.example        # Environment variables template
@@ -164,7 +164,7 @@ VITE_SERVER_URL=http://localhost:5001
 
 # App Configuration
 VITE_NODE_ENV=development
-VITE_APP_NAME=Socket.io Chat
+VITE_APP_NAME=Messenger Chat
 ```
 
 ## 🧪 Testing
@@ -279,7 +279,7 @@ This project is licensed under the MIT License.
 
 ## 📚 Additional Resources
 
-- [Socket.io Documentation](https://socket.io/docs/)
+- [Messenger Documentation](https://Messenger/docs/)
 - [React Documentation](https://react.dev/)
 - [Render Documentation](https://render.com/docs)
 - [Vercel Documentation](https://vercel.com/docs) 
